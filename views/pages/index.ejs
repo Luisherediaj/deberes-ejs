@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+    
+    <main>
+        <div class="jumbotron">
+            <h1>Probando EJS</h1>
+            <p>Página principal con EJS</p>
+            <!-- hacer eco de la variable creada en server -->
+            <p><%= tagline %></p>
+            <!-- hacer bucle con el listado de los datos -->
+            <ul>
+                <% mascotas.forEach(function(mascota) { %>
+                    <li>
+                        <strong><%= mascota.name %></strong>
+                        raza <%= mascota.organization %>, año nacimiento <%= mascota.birth_year %>
+                    </li>
+                <% }); %>
+            </ul>
+        </div>
+    </main>
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+</body>
+</html>
+
+<!-- Los include no se iluminan pero funcionan. POSOK -->
